@@ -1,0 +1,16 @@
+*, *::before , *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style-type: none;
+}
+
+.visually-hidden{
+    position: absolute;
+    top: 0;
+    left: -10000px;
+    overflow: hidden;
+}

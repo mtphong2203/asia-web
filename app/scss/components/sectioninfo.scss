@@ -1,0 +1,129 @@
+@use '../util/' as *;
+
+.info{
+    position: absolute;
+    top: 26%;
+    left: 5%;
+    line-height: 1.6;
+    letter-spacing: rem(1);
+
+    
+    @include breakpoint-down(large){
+        top: 40%;
+    }
+
+    @include breakpoint-down(medium){
+        top: 60%;
+    }
+
+    .info__title{
+        font-size: rem(50);
+        background: linear-gradient(45deg, #de7171, #e95de9); /* Màu gradient */
+        background-clip: text; 
+        -webkit-background-clip: text; 
+        color: transparent;
+        display: inline-block;
+
+        @include breakpoint-down(large){
+            font-size: rem(30);
+        }
+        @include breakpoint-down(medium){
+            font-size: rem(20);
+        }
+    }
+
+    &__detail{
+        font-size: rem(30);
+        display: block;
+        font-weight: 900;
+
+        .marketing{
+            background: linear-gradient(45deg, rgb(122, 26, 122), orange 80%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+    }
+
+    &__description{
+        color: #333;
+        font-size: rem(20);
+        margin: rem(12) auto;
+
+        .description--cut{
+            display: block;
+        }
+    }
+
+    &__link{
+        color: white;
+        background: linear-gradient(45deg ,#098dc1,60% ,#f417de);
+        border-radius: rem(40);
+        padding: rem(16);
+        font-size: rem(16);
+        margin-top: rem(16);
+        position: relative;
+        z-index: 1;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    &__link::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(45deg ,#f417de 2.5%,#098dc1);
+        transition: .5s ease;
+        z-index: -1;
+    }
+
+    &__link:hover:before{
+        width: 100%;
+    }
+
+    
+}
+
+.count{
+   
+    
+
+    display: flex;
+    justify-content: space-around;
+    
+    
+    &__number{
+        padding: rem(12);
+        text-align: center;
+        line-height: 1.6;
+        color: whitesmoke;
+        background: linear-gradient(45deg , rgb(159, 156, 156), rgb(235, 204, 147));
+        width: rem(300);
+        height: 120px;
+        border-radius: rem(12);
+
+        .num{
+            display: block;
+            font-size: rem(40);
+            background: linear-gradient(45deg, pink, aqua 2.5%);
+            background-clip: text;
+            --webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .text{
+            display: block;
+            font-size: rem(28);
+        }
+    }
+
+    &__number:hover{
+    }
+
+}

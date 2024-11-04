@@ -1,0 +1,63 @@
+:root{
+    --background-header: #4c4a4b;
+    --background-nav: linear-gradient(135deg, var(--nav-bg-start), var(--nav-bg-end));
+    --color: whitesmoke;
+    --hightlight-color: #f587f5;
+    --facebook: rgba(30, 30, 241, 0.838);
+    --twitter: hsl(203, 89%, 53%);
+    --america: hsl(318, 66%, 53%);
+    --america-hover: rgb(52, 234, 52);
+    --youtube: hsl(348, 97%, 39%);
+
+    --toggle-bg-light: hsl(230, 22%, 74%);
+    --toggle-light: hsl(230, 19%, 60%);
+    --toggle-button-light: hsl(228, 46%, 96%);
+  
+    --toggle: var(--toggle-light);
+    --toggle-bg: var(--toggle-bg-light);
+    --toggle-button: var(--toggle-button-light);
+
+    --toggle-bg-start: hsl(210, 78%, 56%);
+    --toggle-bg-end: hsl(146, 68%, 55%);
+
+    --dark-bg: hsl(230, 17%, 14%);
+    --text-color: whitesmoke;
+    --light-bg: #ffc0cb;
+    --text-color-light: #000;
+
+    --nav-bg-start: rgb(71, 201, 249);
+    --nav-bg-end: rgb(234, 132, 215);
+
+    --nav-bg-dark: rgb(159, 144, 144);
+    --nav-bg-dark-end: #322b2b;
+
+    --background-list: whitesmoke;
+    --background-dropdown: whitesmoke;
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --background-header: var(--dark-bg);
+        --color: var(--text-color);
+        --toggle-bg: linear-gradient(225deg,var(--toggle-bg-end) 0%,var(--toggle-bg-start) 98.02%);
+        --toggle-button: var(--dark-bg);
+        --background-nav: linear-gradient(135deg, var(--nav-bg-dark) 0%, var(--nav-bg-dark-end) 97.5%);
+        --text-color-light: var(--text-color);
+        --background-list: #000;
+        --background-dropdown: #000;
+        --facebook: rgb(38, 162, 238);
+    }
+}
+
+body.light{
+    --background-header: var(--light-bg);
+    --color: var(--text-color-light);
+    --toggle-bg: var(--toggle-bg-light);
+    --toggle-button: var(--toggle-button-light);
+    --background-nav: linear-gradient(135deg, var(--nav-bg-start), var(--nav-bg-end));
+    --text-color-light: var(--nav-bg-dark-end);
+    --background-list: var(--text-color);
+    --background-dropdown: whitesmoke;
+    --facebook: rgb(17, 104, 226);
+}
+

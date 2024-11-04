@@ -1,0 +1,193 @@
+@use '../util/' as *;
+
+.service{
+    margin-top: rem(16);
+    background: rgba(161, 127, 140, 0.1);
+    padding: rem(64);
+    line-height: 1.6;
+
+    &__header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: rem(32);
+    }
+    
+    &__title{
+        background: linear-gradient(45deg, rgb(234, 87, 234) , rgb(250, 171, 25) 67.5%);
+        background-clip: text;
+        --webkit-background-clip: text;
+        color: transparent;
+        display: inline-block;
+        margin-bottom: rem(16);
+    }
+
+    &__head{
+        font-size: rem(50);
+        font-weight: bold;
+
+        @include breakpoint-down(large){
+            font-size: rem(36);
+        }
+
+        @include breakpoint-down(medium){
+            font-size: rem(24);
+        }
+    }
+
+    &__group{
+       display: grid;
+       grid-template-columns: repeat(3,1fr);
+       grid-template-rows: repeat(2,auto);
+
+       .service__item {
+        position: relative;
+        background: transparent;
+        padding: rem(32) rem(24);
+        border-right: 1px solid purple; 
+        
+        
+        .service__plus {
+            width: 50px;
+            height: 50px;
+            background: rgba(228, 165, 176, 0.2);
+            border-radius: rem(64);
+            box-shadow: 5px 5px 0 rgb(176, 21, 176);
+            margin-bottom: rem(12);
+        }
+    
+        .service__detail {
+            font-size: rem(24);
+            font-weight: bold;
+        }
+    
+        .service__description {
+            font-size: rem(18);
+            color: #333;
+        }
+    
+        .service__link {
+            position: absolute;
+            background: transparent;
+            color: white;
+            font-size: rem(20);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease; /* Thay đổi transition cho link */
+        }
+    
+        .service__link:hover {
+            color: #000;
+            font-weight: bold;
+        }
+    }
+
+    .service__item:last-child{
+        border-right: none;
+    }
+    .service__item:nth-child(3){
+        border: none;
+    }
+    
+    .service__item:hover {
+        background-color: rgb(210, 108, 210);
+    
+        .service__detail, .service__description {
+            color: white;
+        }
+    }
+    
+    .service__item:hover .service__link {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Các lớp dịch vụ riêng biệt */
+    .service--product {
+        .service__plus {
+            box-shadow: 5px 5px 0 rgba(235, 170, 50, 0.8);
+        }
+    }
+    
+    .service--product:hover {
+        background: linear-gradient(135deg, rgb(217, 69, 69), rgb(249, 167, 16));
+    }
+    
+    .service--user {
+        .service__plus {
+            box-shadow: 5px 5px 0 rgba(7, 247, 251, 0.8);
+        }
+    }
+    
+    .service--user:hover {
+        background: linear-gradient(135deg, rgb(51, 145, 145), aqua);
+    }
+    
+    .service--seo {
+        border-top: 1px solid purple;
+        .service__plus {
+            box-shadow: 5px 5px 0 rgb(245, 6, 197);
+        }
+    }
+    
+    .service--seo:hover {
+        background: linear-gradient(135deg, rgb(245, 169, 30), rgb(214, 10, 214));
+    }
+    
+    .service--category {
+        border-top: 1px solid purple;
+        .service__plus {
+            box-shadow: 5px 5px 0 rgb(228, 26, 26);
+        }
+    }
+    
+    .service--category:hover {
+        background: linear-gradient(135deg, rgb(204, 137, 12), rgb(214, 14, 14));
+    }
+    
+    .service--gift {
+        border-top: 1px solid purple;
+        .service__plus {
+            box-shadow: 5px 5px 0 rgb(161, 246, 35);
+        }
+    }
+    
+    .service--gift:hover {
+        background: linear-gradient(135deg, rgb(16, 145, 16), rgb(13, 241, 13));
+    }
+  }
+
+  .submit{
+    position: relative;
+    width: 100%;
+    border-radius: rem(24);
+    margin-top: rem(64);
+    display: flex;
+    justify-content: center;
+
+    .input{
+        background: linear-gradient(135deg, rgb(35, 202, 202), rgb(224, 183, 190));
+        border: none;
+        color: #000;
+        font-size: rem(16);
+        font-weight: bold;
+        border-radius: rem(36);
+        padding: rem(24);
+        padding-right: rem(200);
+        width: 40%;
+    }
+
+    .input:focus-visible{
+        outline: none;
+    }
+    
+    .subcribe{
+        position: absolute;
+        background: linear-gradient(45deg, rgb(241, 64, 10), rgb(168, 111, 7));
+        top: -11%;
+        right: 31%;
+    }
+  }
+    
+}

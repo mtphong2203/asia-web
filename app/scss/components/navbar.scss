@@ -1,0 +1,92 @@
+@use '../util/' as *;
+
+.navbar{
+    position: relative;
+    background: var(--background-nav);
+    margin: rem(24) rem(14);
+    border-radius: rem(8);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 600px;
+
+    &__image{
+        width: 200px;
+        height: auto;
+        margin: rem(20) rem(20);
+    }
+
+    &__list{
+        display: flex;
+        align-items: center;
+        gap: rem(18);
+        padding: rem(14);
+        margin: rem(20) rem(40) auto auto;
+        background: var(--background-list);
+        border: 1px solid var(--color);
+        border-radius: rem(12);
+        font-size: rem(20);
+
+        @include breakpoint-down(large){
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(2, auto);
+        }
+
+       li{
+        display: inline-block;
+        position: relative;
+       }
+
+        a{
+            display: block;
+        }
+
+        ul.dropdown li{
+            display: block;
+            text-decoration: underline;
+        }
+
+        ul.dropdown li:hover{
+            text-decoration: none;
+        }
+
+        ul.dropdown{
+            position: absolute;
+            width: 200px;
+            height: auto;
+            padding: rem(8) rem(16);
+            z-index: 1;
+            line-height: 1.5;
+            background-color: var(--background-dropdown);
+            margin-top: rem(14);
+            border-top: 2px solid var(--america);
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transition: .8s ease-in-out;
+        }
+
+    }
+
+    &__list a{
+        color: var(--text-color-light)
+    }
+
+    &__list a:hover, a:focus-visible{
+        color: var(--nav-bg-end);
+        
+    }
+
+    &__list li.dropdown__control:hover ul.dropdown{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__home, &__list{
+       position: sticky;
+       top: 0;
+       z-index: 999;
+    }
+
+}

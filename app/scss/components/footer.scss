@@ -1,0 +1,72 @@
+@use '../util/' as *;
+
+.footer{
+    background: #000;
+    color: whitesmoke;
+    opacity: 0.9;
+    display: flex;
+    justify-content: space-around;
+
+    &__left{
+        width: 30%;
+        margin-left: rem(64);
+    }
+
+    &__content{
+        width: 70%;
+        margin: rem(64) rem(48);
+        line-height: 1.4;
+
+
+        .footer__right{
+            width: 300px;
+            height: auto;
+            margin-bottom: rem(32);
+
+
+            @include breakpoint-down(large){
+                width: 200px;
+            }
+
+            @include breakpoint-down(medium){
+                width: 100px;
+            }
+        }
+
+        .footer__title{
+            font-size: rem(22);
+            font-weight: 800;
+        }
+
+        .footer__contact{
+            margin-top: rem(36);
+            font-size: rem(20);
+            display: flex;
+            gap: rem(32);
+
+            .afair{
+                width: 50%;
+            }
+
+            .afair__title{
+                font-size: rem(32);
+                margin-bottom: rem(32);
+            }
+
+            .afair__group{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #333;
+                padding: rem(16) 0;
+            }
+
+            .afair__group:hover{
+                color: purple;
+                transition: color .5s ease-in-out, border .5s ease;
+                border-bottom: 1px solid purple
+            }
+
+        }
+    }
+}

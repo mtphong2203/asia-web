@@ -1,0 +1,113 @@
+@use '../util/' as *;
+
+.company{
+    padding: rem(64) rem(32);
+    line-height: 1.4;
+
+    .company__title{
+        font-size: rem(24);
+        background: linear-gradient(45deg, #f632f6, rgb(237, 168, 40));
+        background-clip: text;
+        --webkit-background-clip: text;
+        color: transparent;
+        display: inline-block; 
+    }
+
+    .intro{
+        margin-top: rem(12);
+        &__description{
+            display: flex;
+            justify-content: space-around;
+        }
+        &__title{
+            font-size: rem(60);
+            font-weight: bolder;
+            line-height: 0.8;
+            
+            @include breakpoint-down(large){
+                font-size: rem(45);
+            }
+
+            @include breakpoint-down(medium){
+                font-size: rem(30);
+            }
+        }
+
+        &__detail{
+            color: #686464;
+            font-size: rem(18);
+            width: 50%;
+        }
+
+        .content{
+            display: flex;
+            justify-content: space-around;
+            margin-top: rem(64);
+
+            &__image{
+                width: 500px;
+                height: auto;
+                box-shadow: -20px -20px 0px rgba(202, 85, 202, 0.2);
+
+                @include breakpoint-down(large){
+                    width: 400px;
+                    height: auto;
+                }
+
+                @include breakpoint-down(medium){
+                    width: 250px;
+                    height: auto;
+                }
+            }
+
+            &__contact{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .contact__info{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: rem(32);
+
+                    .learn--more{
+                       width: rem(200);
+                    }
+
+                    .us{
+                        font-size: rem(20);
+                    }
+
+                    .phone{
+                        display: block;
+                        font-size: rem(24);
+                    }
+
+                    .phone:hover{
+                        color: rgb(45, 235, 20);
+                    }
+                }
+            }
+            
+            &__group{
+                padding: rem(16);
+                background-color: whitesmoke;
+                border-top-left-radius: rem(64);
+            }
+
+            &__title{
+                color: #000;
+                font-size: rem(28);
+                font-weight: bold;
+            }
+
+            &__wrap{
+                font-size: rem(18);
+                color: gray;
+            }
+        }
+    }
+
+
+}
